@@ -1,0 +1,1360 @@
+:root{
+    --couleur-liens-menu:#757575;
+    --couleur-primaire:black; 
+    --arrondir:29px;
+    --ombre-btn:rgba(0, 0, 0, 0.904);
+    --btn-color:#00348E;
+}
+html{
+    scroll-behavior: smooth;
+}
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:rgb(20, 53, 70);
+}
+
+
+
+.bienvenue,.moi,.projet,.services,.contacts{
+    max-width: 1200px;
+    height: 100%;
+    background: white;
+    margin:.5em auto 0 auto;
+    border-radius: var(--arrondir);
+    overflow: hidden;
+}
+/*=============
+  style du nav_section_bienvenue
+  ============== */
+.bienvenue header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bienvenue .bienvenue_liens{
+  text-align: center;
+  padding: 10px 0;
+}
+.bienvenue_liens a{
+    color:var(--couleur-liens-menu);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+.bienvenue_liens a:hover{
+    color: var(--btn-color);
+}
+.bienvenue_liens a:not(:first-child){
+    margin-left: 20px;
+}
+.bienvenue_liens a:first-child{
+    padding:5px 20px;
+    background:var(--btn-color);
+    border-radius: var(--arrondir);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.911);
+}
+.bienvenue_bar_menu{
+    display: none;
+}
+/*=============
+  style du main_section_bienvenue
+  ============== */
+
+main{
+    display: flex;
+    padding: 50px 50px 50px 60px;
+    align-items: center;
+}
+main .bienvenue_main_texte{
+    width: 50%;
+    padding: 10px 10px 10px 40px;
+}
+main .bienvenue_main_img{
+    max-width: 50%;
+    padding: 10px;
+   
+}
+main .bienvenue_main_img .image{
+    width: 400px;
+    height: 450px;
+    border-radius: 190px 170px 100px 330px; 
+}
+main .bienvenue_main_img .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 190px 170px 100px 330px;
+    transform: rotate(355deg);
+    object-fit: cover;
+}
+.bienvenue_main_texte{
+    text-align: left;
+    padding-left: 60px;
+    
+}
+.bienvenue_main_texte h1{
+    font-size: 4em;
+    font-weight: normal;
+    animation-name: move_name;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.9s;
+}
+
+.bienvenue_main_texte p{
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--couleur-liens-menu);
+    margin-bottom: 1em;
+    animation-name: move_name;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.9s;
+}
+@keyframes move_name {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity:1;
+        transform: translateX(0);
+    }
+}
+
+.bienvenue_main_texte a,.moi_texte_about_me a{
+    text-decoration: none;
+    padding:10px 30px;
+    border-radius: 9px;
+    color: var(--btn-color);
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid var(--btn-color);
+    font-size: 1.5em;
+    position: relative;
+    overflow-x: hidden;
+    background-color: transparent;
+    z-index: 1;
+    transition: all 0.8s ease;
+    animation-name: move_btn ;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.9s;
+   
+}
+@keyframes move_btn {
+    from{
+     opacity: 0;
+     padding: 0;
+    }
+    to{
+     opacity: 1;
+     padding:10px 30px;
+    }
+}
+
+.bienvenue_main_texte a::before,.moi_texte_about_me a::before{
+    content:"";
+    background-color: #001842;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    vertical-align: middle;
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+.bienvenue_main_texte a:hover::before,.moi_texte_about_me a:hover::before{
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.911);
+}
+.bienvenue_main_texte a:hover,.moi_texte_about_me a:hover{
+    color: white;
+    border: none;
+}
+/*=============
+ FIN style du main_section_bienvenue
+  ============== */
+
+/*======= fin de la page bienvenue =========*/
+
+/*=============
+ style du main_section_MOI
+  ============== */
+
+.moi h1{
+   width: 100px;
+   font-size: 3em;
+   font-weight: lighter;
+   text-align: center;
+   margin: 5px auto 20px auto;
+   position: relative;
+   color: var(--couleur-liens-menu);
+}
+.moi h1::after{
+ content: "";
+ width: 100%;
+ height: 5px;
+ left: 0;
+ bottom: 0;
+ position: absolute;
+ display: inline-block;
+ background-color: var(--btn-color);
+ border-radius: 10px;
+ box-shadow: 0 3px 3px rgba(0, 0, 0, 0.884);
+}
+main .moi_image_profil{
+    width: 40%;
+}
+main .moi_texte_about_me{
+    width: 60%;
+    font-size: 1.5em;
+    align-self: flex-start;
+}
+.moi .image{
+    width: 350px;
+    height: 400px;
+    padding: 0 0 0 40px;
+}
+.moi .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.moi_texte_about_me .main_moi_about_me{
+    font-weight: lighter;
+    font-size: 1.1em;
+    padding: .5em 0;
+}
+.main_moi_competences{
+    margin-bottom: 50px;
+}
+.main_moi_competences h2{
+    padding:0 0 20px 0;
+    font-size: 1em;
+}
+.main_moi_competences_langage{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.langage{
+    background-color: white; 
+    padding: 5px 20px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.507),1px 1px 3px rgba(0, 0, 0, 0.884) inset;
+}
+.main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+    margin: 0;
+}
+.moi .main_moi_competences_langage div{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.moi_texte_about_me a{
+   font-size: 1em;
+}
+.btn_up{
+    position: fixed;
+    right: .8em;
+    bottom: .8em;
+    color: var(--btn-color);
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.904);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+     padding:0 0 0 6px;
+     z-index: 10;
+}
+.btn_up i{
+    transform: rotate(180deg);
+    font-size: 3.8em;
+    
+}
+
+/*=============
+ FIN style du main_section_MOI
+  ============== */
+ /*======= fin de la page moi =========*/ 
+
+ /*======= page Projet =========*/ 
+ .projet{
+     padding-bottom: 100px;
+ }
+.projet h1{
+   width: 200px;
+   font-size: 3.5em;
+   font-weight: lighter;
+   text-align: center;
+   margin: 5px auto 5px auto;
+   position: relative;
+   color: var(--couleur-liens-menu);
+ }
+.projet h1::after{
+    content: "";
+     position: absolute;
+     width: 100%;
+     left: 0;
+     bottom: -10px;
+     height: 5px;
+     background-color: var(--btn-color);
+     border-radius: 10px;
+     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.884);
+     display: inline-block;
+ }
+article {
+    display: flex;
+    padding: 50px 30px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.landing_page_image,.formulaire_page_image,.google_page_image{
+    width: 350px;
+    height: 200px;
+    box-shadow: 1px 1px 6px black;
+}
+article img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+article h2{
+    font-weight: lighter;
+    font-size:1.8em;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+article a{
+    text-decoration: none;
+    padding:10px 30px;
+    border-radius: 9px;
+    color: var(--btn-color);
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid var(--btn-color);
+    font-size: 1.5em;
+    position: relative;
+    overflow-x: hidden;
+    background-color: transparent;
+    z-index: 1;
+    transition: all 0.8s ease;
+    animation-name: move_btn ;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.9s;
+}
+article a::before{
+    content:"";
+    background-color: #001842;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    vertical-align: middle;
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+article a:hover::before{
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.911);
+}
+article a:hover:hover{
+    color: white;
+    border: none;
+}
+ /*=======  fin de page Projet =========*/ 
+
+  /*======= page services =========*/ 
+  .services{
+    padding-bottom: 100px;
+}
+.services h1{
+    width: 250px;
+    font-size: 3.5em;
+    font-weight: lighter;
+    text-align: center;
+    margin: 5px auto 20px auto;
+    position: relative;
+    color: var(--couleur-liens-menu);
+}
+.services h1::after{
+    content: "";
+     position: absolute;
+     width: 100%;
+     left: 0;
+     bottom: -10px;
+     height: 5px;
+     background-color: var(--btn-color);
+     border-radius: 10px;
+     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.884);
+     display: inline-block;
+ }
+ .article_web_design,.article_web_developpment,.article_app_developper{
+    width: 300px;
+    height: 300px;
+    background:linear-gradient(142deg,rgba(255,255,255, 0.40),rgba(255,255,255,0.5));
+    text-align: center;
+    backdrop-filter: blur(40px);
+    border: 2px solid grey;
+    padding: 9px;
+    border-radius: 10px;
+ }
+ .image{
+     width: 130px;
+     height: 130px;
+     position: relative;
+ }
+ article .image img{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ /*=======  FIN page services =========*/ 
+
+  /*======= page contact =========*/ 
+
+ .contacts{
+     background: linear-gradient(120deg,#FF95BD,#00778F);
+     
+ }
+ .contacts header h1{
+    width: 220px;
+    font-size: 3.5em;
+    font-weight: lighter;
+    text-align: center;
+    margin:10px auto 50px auto ;
+    position: relative;
+    color: rgb(51, 51, 51);
+    
+ }
+ .contacts h1::after{
+    content: "";
+     position: absolute;
+     width: 100%;
+     left: 0;
+     bottom: 0;
+     height: 5px;
+     background-color: var(--btn-color);
+     border-radius: 10px;
+     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.884);
+     display: inline-block;
+ }
+ .section_contact{
+     display: flex;
+     width: 990px;
+     margin: auto;
+     background: linear-gradient(120deg,rgba(255,255,255,0.5),rgba(255,255,255,0.1));
+     backdrop-filter: blur(30px);
+     border: 3px solid rgba(243, 243, 243, 0.4);
+     background-clip: padding-box;
+     border-radius: 25px;
+     padding: 20px 20px 0 20px;
+     margin-bottom: 20px;
+ }
+ .section_contact_formulaire{
+     width: 50%;
+     padding: 0 50px;
+ }
+ .section_contact_liens{
+     width: 50%;
+     padding: 0 40px;
+     font-size: 1.5em;
+ }
+ .section_contact_liens p{
+    font-size: 1.3em;
+    font-weight:550;
+}
+input,textarea{
+    width: 100%;
+    margin: 1em;
+    border: none;  
+}
+textarea{
+    padding-left: 30px;
+}
+input{
+    padding:10px;
+    border-radius: 25px;
+    padding-left: 30px; 
+    outline: none;
+}
+::-webkit-placeholder{
+    color: rgb(0, 0, 0);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+::-moz-placeholder{
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+input[type="submit"]{
+    width: 200px;
+    padding:10px 30px;
+    cursor: pointer;
+    border: 1px solid var(--btn-color);
+    background-color: transparent;
+    color: var(--btn-color);
+    font-weight: bold;
+    font-size: 1.3em;
+    transition: all 0.6s ease;
+}
+input[type="submit"]:hover{
+ background-color: var(--btn-color);
+ color: white;
+}
+.submit{
+    margin-top: -20px;
+}
+  /*=======  FIN page contact =========*/ 
+
+/*======= page Footer =========*/ 
+
+  .footer{
+    max-width: 1200px;
+    background: white;
+    margin:.5em auto 0 auto;
+    border-radius:10px;
+    padding: 20px;
+    display: flex;
+    justify-content:space-between;
+  }
+  .footer_liens a,.footer p{
+      text-decoration: none;
+      color: var(--btn-color);
+      font-size: 1.3em;
+      font-weight: 650;
+  }
+  .footer_liens a:not(:first-child){
+      margin-left: 20px;
+  }
+  
+  .section_contact_liens a{
+      text-decoration: none;
+      color: black;
+      font-size: 2em;
+    
+  }
+  
+  .section_contact_liens a i{
+      background-color: white;
+      padding: 5px 10px;
+      border-radius:10px;
+  }
+
+  /*=======  FIN page Footer =========*/ 
+
+ 
+
+  /* ========
+     TABLETTE
+     ========= */
+@media (max-width:800px) {
+    /* ========
+     AFFICHAGE DE MENU
+     ========= */
+     .bienvenue_bar_menu{
+        display: block;
+        margin-right: .5em;
+        font-size: 3em;
+        color: var(--btn-color);
+    }
+     /* ========
+     AFFICHAGE DE MENU
+     ========= */
+    .moi h1::after,.services h1::after,.projet h1::after,.contacts h1::after{
+        width: 80%;
+        left: 10%;
+    }
+    .bienvenue,.moi,.projet,.services,.contacts{
+        max-width: 100%;
+        min-height: 100%;
+        margin:0;
+    }
+    .bienvenue{
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+   .bienvenue .bienvenue_liens{
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 1em;
+        background-color: rgb(53, 0, 54);
+        z-index: 20;
+        border-radius: 15px 30px 30px 50px;
+
+    }
+    .bienvenue_liens a{
+        text-decoration: none;
+        display: block;
+        color: white;
+        margin: 10px;
+    }
+    .bienvenue_liens a:first-child{
+        background-color: transparent;
+        border: none;
+        box-shadow: 0 0 0 ;
+    }
+    .bienvenue_liens a:first-child:hover{
+        color: var(--btn-color);
+    }
+    
+   
+    .bienvenue header{
+        justify-content: flex-end;
+    }
+   
+    main{
+        display: flex;
+        padding: 30px 0;
+        margin: 0;
+        align-items: center;
+    }
+    main .bienvenue_main_texte{
+        padding: 0;
+        margin-left: 30px;    
+    }
+    .bienvenue_main_texte h1{
+        font-size: 2em;
+        font-weight: bold;
+    }
+    .bienvenue_main_texte p{
+        font-size: 1.5em;
+    }
+    .bienvenue_main_texte a,.moi_texte_about_me a{
+        padding:3px 9px;
+        border-radius: 50px;
+       
+    }
+    @keyframes move_btn {
+        from{
+         opacity: 0;
+         padding: 0;
+        }
+        to{
+         opacity: 1;
+         padding:3px 9px;
+        }
+    }
+    .bienvenue_main_texte a::before,.moi_texte_about_me a::before{
+        border-radius: 50px;
+    }
+    main .bienvenue_main_img{
+        max-width: 50%;
+        margin-right: 20px;
+       
+    }
+    main .bienvenue_main_img .image{
+        max-width: 300px;
+        height: 300px; 
+    }
+    .main_bienvenue{
+        position: relative;
+    }
+    .bienvenue_main_btn_down {
+      position: absolute;
+      bottom: 0;
+    }
+
+    /* == moi ==*/
+    main .moi_texte_about_me{
+        font-size: 1em;
+        align-self: center;
+    }
+    .moi .image{
+        width: 230px;
+        height: 250px;
+        padding: 0;
+        margin-left: 30px;
+    }
+    .main_moi_competences h2{
+        padding:0 0 10px 0;
+    }
+   
+    .langage{
+        background-color: white; 
+        padding: 2px 10px;
+        border-radius: 30px;
+    }
+    .main_moi_competences{
+        margin-bottom: 40px;
+    }
+    .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+        margin: 0;
+    }
+    .moi .main_moi_competences_langage div{
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .moi{
+        margin-bottom: 10px;
+        padding: 0 30px;
+    }
+    .main_moi_competences_langage div{
+        margin: 10px;
+    }
+    .main_moi_competences_langage div:last-child{
+        margin-left: 15px;
+    }
+    .main_moi_competences_langage span{
+        font-size: 1em;
+    }
+    .btn_up{
+        width: 30px;
+        height: 30px;
+      
+    }
+    .btn_up i{
+        font-size:2em;
+    }
+    /* == moi ==*/
+
+     /* == projet ==*/
+     .projet{
+         overflow: visible;
+         padding-bottom: 70px;
+         margin-bottom: 10px;
+     }
+     article {
+        padding: 30px;
+        margin:0;
+    }
+    .landing_page_image,.formulaire_page_image,.google_page_image{
+        width: 300px;
+        height: 200px;
+        margin-top: 10px;
+    }
+   
+    article h2{
+        font-weight: lighter;
+        font-size:1em;
+        padding: 5px 0;
+        margin-bottom:0;
+    }
+    article a{
+        padding:5px 10px;
+        border-radius: 50px;
+        font-size: .8em;
+    }
+      /* == projet ==*/
+
+    /* ======
+       services
+       ====== */
+    .services{
+        margin-bottom: 10px;
+    }
+    .article_web_design,.article_web_developpment,.article_app_developper{
+        width: 250px;
+        height: 200px;
+     }
+     .article_app_developper{
+         margin-top: 20px;
+     }
+      /* ======
+       services
+       ====== */
+    /* ======
+       contact
+       ====== */ 
+       .contacts header h1{
+        margin:0px auto 20px auto ;
+     }
+     .section_contact{
+        width: 90%;
+        padding: 10px 10px 0 10px;
+        margin-bottom: 10px;
+    }
+    .section_contact_formulaire{
+
+        padding: 0 30px;
+    }
+    .section_contact_liens{
+        padding: 0 20px;
+        font-size: 1em;
+    }
+    .section_contact_liens p{
+        font-size: 1.3em;
+        font-weight:550;
+    }
+    input,textarea{
+        margin: .5em;
+    }
+    textarea{
+        padding-left: 20px;
+    }
+    input{
+        padding:8px;
+        padding-left: 20px; 
+    }
+    ::placeholder{
+        font-size: 1em;
+    }
+    input[type="submit"]{
+        width: 100px;
+        padding:5px 10px;
+        font-size: 1em;
+    }
+    .submit{
+        margin-top: 0;
+    }
+     /* ======
+       contact
+       ====== */ 
+     /* ======
+       footer
+       ====== */   
+    .footer{
+        font-size: 1em;
+        padding: 10px;
+        margin: 0;
+        margin-top: 10px;
+    }   
+}
+@media (max-width:722px) {
+    .moi h1::after,.services h1::after,.projet h1::after,.contacts h1::after{
+        width: 80%;
+        left: 10%;
+    }
+     /* == moi ==*/
+     main .moi_texte_about_me{
+      padding: 0 20px;
+    }
+    .moi .image{
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin-left: 30px;
+    }
+    .main_moi_competences h2{
+        padding:0;
+    }
+  
+    .main_moi_competences{
+        margin-bottom: 10px;
+    }
+    .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+        margin: 0;
+    }
+    .moi .main_moi_competences_langage div{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .main_moi_competences_langage{
+        margin-bottom: 20px;
+    }
+    main.main_moi{
+        padding: 0 0 30px 0;
+    }
+    
+    /* == moi ==*/
+
+    /* == projet ==*/
+    .projet article {
+        padding: 50px 0;
+    }    
+    /* == footer ==*/
+    .footer{
+        font-size: .8em;
+    }
+
+}
+@media (max-width:600px){
+     /* === 
+       bienvenue
+       ==== */
+    .bienvenue,.moi,.projet,.services,.contacts{
+        border-radius:0;
+        margin: 10px;
+    }
+    .bienvenue{
+        margin-bottom: 0px;
+        margin-top: 5px;
+    }
+    main{
+        flex-direction: column;
+        padding: 0;
+    }
+    main .bienvenue_main_texte{
+        padding:30px 0;
+        margin: 0 0 40px; 
+        order: 2; 
+        width: 50%;
+    }
+    .bienvenue_main_texte h1{
+        font-size: 2.3em;
+        font-weight: bold;
+    }
+    .bienvenue_main_texte p{
+        font-size: 1.5em;
+    }
+    main .bienvenue_main_img{
+        max-width: 50%;
+        margin-right: 0;
+    }
+    main .bienvenue_main_img .image{
+        max-width: 200px;
+        height: 200px; 
+    }
+    
+    .bienvenue_main_btn_down {
+      display: none;
+    }
+    /* === 
+       bienvenue
+       ==== */
+    /* === 
+       Moi 
+       ==== */
+    .moi{
+        padding: 0;
+        margin: 10px;
+    }
+    .moi .image{
+        width: auto;
+        height:auto;
+        padding: 0;
+        margin: auto;
+
+    }
+
+    .moi h1::after{
+        width: 80%;
+        left: 10%;
+    }
+    main .moi_texte_about_me{
+        font-size: 1.6em;
+        padding: 0;
+        font-weight: bold;
+    }
+    .main_moi_competences h2{
+        font-size: 1.5em;
+    }
+    .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+        margin: 0;
+    }
+    .moi .main_moi_competences_langage div{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+     /* === 
+       Moi 
+       ==== */
+
+    /* ===
+      projet
+      ==== */
+    .projet article h2{
+        margin: 0 0 10px 0;
+    }
+    .projet article{
+        padding: 30px 0;
+    }
+    .landing_page_image,.formulaire_page_image,.google_page_image{
+        max-width: 100%;
+        height: 200px;
+        margin-top: 30px;
+    }
+     /* ===
+      projet
+      ==== */
+      /* ===
+      services
+      ==== */
+      .article_web_design,.article_web_developpment,.article_app_developper{
+          margin-top: 10px;
+      }
+      /* ===
+      services
+      ==== */
+
+      /* ===
+      contact
+      ==== */
+
+      .contacts .section_contact{
+          flex-direction: column;
+          align-items: center;
+          width:70%;
+          padding: 0;
+      }
+      .contacts .section_contact_formulaire{
+          order: 2;
+          padding: 0;
+      }
+      input{
+          margin: 5px;
+      }
+      .section_contact_liens{
+          padding: 0 0 0 10px;
+          margin: 0 0 20px 0;
+      }
+      .section_contact_liens P{
+          font-size: 1em;
+      }
+      .liens_reseau_sociaux {
+        display: flex;
+   }
+      .liens_reseau_sociaux a{
+          font-size: 1.5em;
+      }
+      .liens_reseau_sociaux{
+        margin: 10px 0 0 0;
+    }
+    
+       /* ===
+      contact
+      ==== */
+       /* ===
+      footer
+      ==== */
+
+      .footer{
+         display: block;
+         margin: 0 10px;
+         border-radius: 0;
+         text-align: center;
+      }
+      .footer_liens{
+          margin: 0 0 10px 0;
+      }
+        /* ===
+      footer
+      ==== */  
+} 
+@media (max-width:360px){
+    .bienvenue_main_texte a,.moi_texte_about_me a{
+        padding:2px 3px;
+        border-radius: 50px;
+        font-size: 1em;
+    }
+    @keyframes move_btn {
+        from{
+         opacity: 0;
+         padding: 0;
+        }
+        to{
+         opacity: 1;
+         padding:2px 3px;
+        }
+    }
+    
+    .bienvenue .bienvenue_main_texte{
+        padding: 0;
+    }
+    .bienvenue .bienvenue_main_img .image{
+        padding:0 10px 0 0;
+    }
+    /* ===
+      MOI
+      ==== */
+      .moi h1{
+          font-size:2em;
+      }
+      .moi h1::after{
+        width: 50%;
+        left: 25%;
+    }
+      main .moi_texte_about_me{
+        font-size: 1em;
+        padding: 0;
+        font-weight: 500;
+    }
+    .main_moi_competences h2{
+        font-size: 1em;
+    }
+    .main_moi_competences_langage{
+        display: block;
+        margin-top: 10px;
+    }
+    .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+        margin: 0;
+    }
+    .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+        margin: 0;
+    }
+    .moi .main_moi_competences_langage div{
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    /* ===
+       MOI
+    ==== */
+    /* ===
+     projet
+    ==== */
+    .projet h1{
+        font-size: 2em;
+    }
+    .projet h1::after{
+        width: 50%;
+        left: 25%;
+    }
+    .landing_page_image,.formulaire_page_image,.google_page_image{
+        width: 230px;
+        height: 150px;
+    }
+    /* ===
+     projet
+    ==== */
+
+    /* ===
+     services
+    ==== */
+
+    .services h1{
+        font-size: 2em;
+    }
+    .services h1::after{
+        width: 50%;
+        left: 25%;
+    }
+    .services article .image{
+        width: 100px;
+        height: 100px;
+    }
+    .article_web_design,.article_web_developpment,.article_app_developper {
+        width: 200px;
+        height: 200px;
+        padding: 0;
+    }
+     /* ===
+     services
+    ==== */
+
+      /* ===
+      contact
+      ==== */
+      input,textarea{
+          width: 100%;
+          margin: 5px 0;
+      }
+      .section_contact_liens{
+          align-self: flex-start;
+      }
+      .liens_reseau_sociaux{
+          display: flex;
+      }
+      .liens_reseau_sociaux a:not(:first-child){
+           margin-left: 5px;
+      }
+      .contacts header h1{
+          font-size:2em;
+      }
+      .contacts header h1::after{
+        width: 50%;
+        left: 25%;
+    }
+     /* ===
+    contact
+    ==== */
+}
+@media (max-width:306px) {
+    /* ====
+       Bienvenue
+       ==== */
+    .bienvenue .bienvenue_main_img{
+        align-self: flex-start;
+     }
+     .bienvenue .bienvenue_main_img .image{
+         padding:0 0 0 10px;
+     }
+    /* ====
+       Bienvenue
+       ==== */
+    
+      /* ====
+       contact
+       ==== */
+    .liens_reseau_sociaux a{
+        font-size: 1em;
+    }
+
+}
+@media (min-width:801px) and (max-width:1020px){
+     /* ====
+       Bienvenue
+       ==== */
+    .bienvenue .bienvenue_main_texte{
+        padding: 0;
+        margin: 0;
+    }
+    .bienvenue_main_texte h1{
+        font-size: 3em;
+        font-weight: bold;
+    }
+    .bienvenue_main_texte p{
+        font-size: 1.3em;
+    }
+    .bienvenue_main_img{
+        align-self: flex-start;
+    }
+    .bienvenue_main_img .image{
+        transform: rotate(
+            355deg);
+        margin-left: -50px;
+    }
+     .bienvenue_main_img .image{
+         padding: 0 10px;
+     }
+     .bienvenue .bienvenue_main_btn_down{
+        bottom: 5em;
+        z-index: 10;  
+        }
+        
+        @keyframes down {
+          from {
+             bottom: 5em;
+          }
+          to{
+              bottom: 4em;
+          }
+        }
+         /* ====
+       Bienvenue
+       ==== */
+
+        /* ====
+           moi
+          ==== */
+          .moi{
+              height: 100%;
+          }
+          .moi h1::after{
+            width: 80%;
+            left: 12%;
+        }
+        .moi .moi_texte_about_me{
+            font-size: 1.3em;
+        }
+        .moi .moi_image_profil{
+         width: 50%;
+        }
+        .moi .moi_image_profil .image{
+            padding: 10px 20px;
+        }
+        .moi .main_moi{
+            padding-top: 0;
+        }
+        .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+            margin: 0;
+        }
+        .moi .main_moi_competences_langage div{
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        /* ====
+           moi
+          ==== */
+
+        /* ====
+           projet
+          ==== */
+          .projet{
+              height: 100%;
+          }
+          .projet article{
+              padding: 0 0 8em 0;
+              margin: 30px 0 0 0;
+          }
+          .projet article h2{
+              font-size: 1.3em;
+              margin: 2px;
+          }
+          .projet article a{
+             padding: 5px;
+             font-size: 1.1em;
+            
+          }
+          .landing_page_image,.formulaire_page_image,.google_page_image{
+              width: 300px;
+              height: 200px;
+              margin-top: 20px;
+              margin-bottom: 10px;
+          }
+         /* ====
+           projet
+          ==== */
+
+          /* ====
+           services
+          ==== */
+        .article_web_design,.article_web_developpment,.article_app_developper{
+         margin: 0;
+          margin-top: 10px;
+        }  
+          /* ====
+           services
+          ==== */
+        
+        /* ====
+           contact
+          ==== */
+          .contacts .section_contact{
+              width: 90%;
+              margin-bottom: 20px;
+          }
+        /* ====
+           contact
+          ==== */     
+}
+
+@media (min-width:1021px) and (max-width:1140px) {
+   
+        /* ====
+           moi
+          ==== */
+         
+          .main_moi_competences_langage div:first-child,.main_moi_competences_langage div:last-child{
+            margin: 0;
+        }
+        .moi .main_moi_competences_langage div{
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+         /* ====
+           moi
+          ==== */
+
+          /* ====
+           Projets
+          ==== */ 
+        .landing_page_image,.formulaire_page_image,.google_page_image{
+            width: 300px;
+            height: 200px;
+        }
+       .projet article{
+           padding: 50px 0;
+       }
+}
+
+
+  
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
